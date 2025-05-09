@@ -32,7 +32,8 @@ async function loginUser(model){
         "seceret",
         {
             expiresIn: "1h",
-        }
+        },
+        process.env.Token_Secret
     );
     return{token, user};
     }else{
@@ -40,4 +41,5 @@ async function loginUser(model){
     }
 }
 
-module.exports = {registerUser, loginUser}
+module.exports.registerUser  = registerUser;
+module.exports.loginUser = loginUser;
